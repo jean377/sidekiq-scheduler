@@ -8,6 +8,10 @@ module SidekiqScheduler
   module Web
     VIEW_PATH = File.expand_path('../../../web/views', __FILE__)
 
+    def view_path
+      @view_path ||= VIEW_PATH
+    end
+
     def self.registered(app)
       app.get '/recurring-jobs' do
         @presented_jobs = JobPresenter.build_collection(Sidekiq.schedule!)
