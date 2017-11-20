@@ -32,6 +32,8 @@ module SidekiqScheduler
         redirect "#{root_path}recurring-jobs"
       end
     end
+
+    attr_writer :view_path
   end
 end
 
