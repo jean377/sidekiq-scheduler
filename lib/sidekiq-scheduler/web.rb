@@ -8,7 +8,7 @@ module SidekiqScheduler
   module Web
     VIEW_PATH = File.expand_path('../../../web/views', __FILE__)
 
-    def view_path
+    def self.view_path
       @view_path ||= VIEW_PATH
     end
 
